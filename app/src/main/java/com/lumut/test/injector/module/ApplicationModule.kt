@@ -102,7 +102,6 @@ class ApplicationModule(application: Application) {
         val cacheSize = (5 * 1024 * 1024).toLong()
         return Cache(context.cacheDir, cacheSize)
     }
-    
 
     @Provides
     @Singleton

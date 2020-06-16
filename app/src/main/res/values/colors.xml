@@ -10,5 +10,5 @@
     <color name="blackSecondary">#566068</color>
     <color name="bluePrimary">#2B486D</color>
     <color name="blueLightSecondary">#378DF4</color>
-    <color name="whitePure">#FFFF</color>
+    <color name="whitePure">#F3F3F3</color>
 </resources>

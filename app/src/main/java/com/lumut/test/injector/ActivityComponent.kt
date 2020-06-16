@@ -5,7 +5,8 @@ import com.lumut.test.BaseActivity
 import com.lumut.test.injector.annotation.ActivityContext
 import com.lumut.test.injector.annotation.PerActivity
 import com.lumut.test.injector.module.ActivityModule
-import com.lumut.test.master.MasterActivity
+import com.lumut.test.demos.DemosActivity
+import com.lumut.test.demos.demosdetail.DemosDetailActivity
 import dagger.Component
 
 @PerActivity
@@ -15,5 +16,6 @@ interface ActivityComponent {
     fun context(): Context
     fun inject(baseActivity: BaseActivity)
 
-    fun inject(masterActivity: MasterActivity)
+    fun inject(demosActivity: DemosActivity)
+    fun inject(demosDetailActivity: DemosDetailActivity)
 }

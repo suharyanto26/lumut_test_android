@@ -1,18 +1,22 @@
 package com.lumut.test.network
 
 import com.google.gson.Gson
-import com.lumut.test.model.TodosResponse
-import io.reactivex.Observable
+import com.lumut.test.model.TodosModel
+import io.reactivex.Flowable
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 import javax.inject.Inject
 
 interface JsonPlaceholderApi {
     @GET("todos")
-    fun getTodos(): Observable<TodosResponse>
+    fun getTodos(): Flowable<ArrayList<TodosModel>>
+
+    @GET("todos/{id}")
+    fun getDetailTodo(@Path("id") id: Int): Flowable<TodosModel>
 
     class Creator {
         @Inject

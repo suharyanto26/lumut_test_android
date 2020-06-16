@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/btm_no_internet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_action_sheet"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <View
+            android:layout_width="37dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:background="@drawable/line_rounded" />
+
+        <View
+            android:layout_width="37dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/line_rounded" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_no_internet_connection" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/sourcesanspro_bold"
+            android:text="@string/internet_is_not_connected"
+            android:textColor="@color/blackSecondary"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/sourcesanspro_regular"
+            android:text="@string/check_your_wifi_connection_or_your_internet_quota"
+            android:textColor="@color/blackSecondary"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_try_again"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_border"
+                android:fontFamily="@font/sourcesanspro_semibold"
+                android:text="@string/try_again" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_open_settings"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_solid"
+                android:fontFamily="@font/sourcesanspro_semibold"
+                android:text="@string/open_settings"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

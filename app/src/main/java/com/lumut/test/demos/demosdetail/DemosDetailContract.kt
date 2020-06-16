@@ -10,5 +10,6 @@ class DemosDetailContract {
 
     interface Presenter {
         fun loadDetailTodo(id: Int)
+        fun dispose()
     }
 }

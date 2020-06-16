@@ -29,4 +29,10 @@ class DemosDetailPresenter @Inject constructor(
                 mvpView?.showDetailTodo(it)
             }, {})
     }
+
+    override fun dispose() {
+        when {
+            !disposableApi.isDisposed -> disposableApi.dispose()
+        }
+    }
 }

@@ -20,7 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".demos.demosdetail.DemosDetailActivity"/>
+        <activity
+            android:name=".demos.demosdetail.DemosDetailActivity"
+            android:label="Detail Demos"/>
     </application>
 
 </manifest>

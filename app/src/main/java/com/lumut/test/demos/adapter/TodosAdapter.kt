@@ -4,8 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.lumut.test.R
 import com.lumut.test.demos.demosdetail.DemosDetailActivity
@@ -13,7 +14,12 @@ import com.lumut.test.model.TodosModel
 import kotlinx.android.synthetic.main.item_demos.view.*
 import kotlin.collections.ArrayList
 
-class TodosAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class TodosAdapter constructor(
+    var twoPane: Boolean,
+    var data: (data: TodosModel) -> Unit,
+    var pres: (pres: Int) -> Unit
+) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var list = ArrayList<TodosModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -29,7 +35,7 @@ class TodosAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         if (list.isNotEmpty()) {
             val d = list[position]
             val l = holder.itemView
-            
+
             l.tv_id.text = d.id.toString()
             l.tv_title.text = d.title
             var numberProgress: Int
@@ -42,12 +48,24 @@ class TodosAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             }
             l.progress.progress = numberProgress
 
+            if (twoPane) {
+                l.progress.visibility = GONE
+                l.tv_persentase.visibility = VISIBLE
+                l.tv_persentase.text = "Persentase : $numberProgress%"
+            }
+
             l.setOnClickListener {
-                l.context.startActivity(
-                    Intent(l.context, DemosDetailActivity::class.java)
-                        .putExtra("id", d.id)
-                        .putExtra("progress", numberProgress)
-                )
+                if (twoPane) {
+                    data(d)
+                    pres(numberProgress)
+                } else {
+                    l.context.startActivity(
+                        Intent(l.context, DemosDetailActivity::class.java)
+                            .putExtra("id", d.id)
+                            .putExtra("progress", numberProgress)
+                    )
+                }
+
             }
         }
     }

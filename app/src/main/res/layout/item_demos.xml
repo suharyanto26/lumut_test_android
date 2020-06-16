@@ -67,6 +67,16 @@
         app:layout_constraintStart_toStartOf="@id/tv_title"
         app:layout_constraintTop_toBottomOf="@id/tv_status" />
 
+    <TextView
+        android:id="@+id/tv_persentase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:fontFamily="@font/sourcesanspro_regular"
+        android:text="0%"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_status" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"

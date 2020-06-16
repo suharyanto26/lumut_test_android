@@ -1,6 +1,10 @@
 package com.lumut.test.demos.demosdetail
 
 import android.os.Bundle
+import android.view.View.GONE
+import android.view.View.VISIBLE
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import com.lumut.test.BaseActivity
 import com.lumut.test.R
 import com.lumut.test.model.TodosModel
@@ -31,6 +35,9 @@ class DemosDetailActivity : BaseActivity(), DemosDetailContract.View {
     }
 
     override fun showDetailTodo(model: TodosModel) {
+        cl_detail.visibility = VISIBLE
+        cl_shimmer.visibility = GONE
+
         tv_id.text = model.id.toString()
         tv_title.text = model.title
         if (model.completed) {

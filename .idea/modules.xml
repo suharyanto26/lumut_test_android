@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lumut_test_android.iml" filepath="$PROJECT_DIR$/.idea/modules/lumut_test_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Test_Android_Lumut.iml" filepath="$PROJECT_DIR$/.idea/modules/Test_Android_Lumut.iml" group="Test_Android_Lumut" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Test Android Lumut/app" />
     </modules>
   </component>
 </project>
